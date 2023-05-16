@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<!--Write a program that asks the user for an amount to invest, the annual interest
+and the number of years, and displays on screen the capital obtained in the
+investment each year that the investment lasts.
+Example:
+Amount to invest? 1000
+Annual percentage interest? 10
+Years? 2
+Capital after 1 year: 1100.00€
+Principal after 2 years: 1210.00€-->
+
+<head>
+    <title>Investment Calculator</title>
+    <meta charset="utf-8">
+    
+    <script>
+      function calculateInvestment() {
+        var amount = parseFloat(document.getElementById("amountInput").value);
+        var interestRate = parseFloat(document.getElementById("interestRateInput").value);
+        var years = parseInt(document.getElementById("yearsInput").value);
+        
+        var result = document.getElementById("result");
+        result.innerHTML = "";
+        
+        for (var i = 1; i <= years; i++) {
+          var capital = amount * Math.pow((1 + interestRate / 100), i);
+          var yearResult = document.createElement("p");
+          yearResult.textContent = "Capital after " + i + " year: " + capital.toFixed(2) + "€";
+          result.appendChild(yearResult);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <label for="amountInput">Amount to invest?</label>
+    <input type="number" step="0.01" id="amountInput">
+    
+    <label for="interestRateInput">Annual percentage interest?</label>
+    <input type="number" step="0.01" id="interestRateInput">
+    
+    <label for="yearsInput">Years?</label>
+    <input type="number" id="yearsInput">
+    
+    <button onclick="calculateInvestment()">Calculate</button>
+    
+    <div id="result"></div>
+  </body>
+  </html>
+
+
+
+
+</html>

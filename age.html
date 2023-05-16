@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<!--Write a function that asks the user for his age and displays all the years he has
+reached (from 1 to his age-->
+
+<!--Prompt them to enter their age, then once you have it tell the machine to list all numbers between 1 and that number-->
+
+<head>
+  <title>Years Lived</title>
+  <script>
+    function generateNumbers() {
+      var age = parseInt(document.getElementById("ageInput").value);
+      var numbersList = document.getElementById("numbersList");
+      
+      // Clear the previous list, if any
+      numbersList.innerHTML = "";
+      
+      // Generate the numbers and add them to the list
+      for (var i = 1; i <= age; i++) {
+        var listItem = document.createElement("li");
+        listItem.textContent = i;
+        numbersList.appendChild(listItem);
+      }
+    }
+  </script>
+</head>
+<body>
+  <label for="ageInput">Enter your age:</label>
+  <input type="number" id="ageInput">
+  <button onclick="generateNumbers()">Generate List</button>
+  
+  <ul id="numbersList"></ul>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!--Nathan loves cycling. Because Nathan knows it’s important to stay hydrated, he
+drinks 0.5 litres of water per hour of cycling. You get given a function with one
+parameter time in hours and you need to return the number of litres Nathan
+will drink, rounded to the smallest value-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hydration Calculation</title>
+  <script>
+    function calculateWaterConsumption() {
+      var time = parseFloat(document.getElementById("timeInput").value);
+      var waterConsumption = Math.floor(time * 0.5);
+      
+      document.getElementById("result").textContent = "Nathan will drink " + waterConsumption + " litre(s) of water.";
+    }
+  </script>
+</head>
+<body>
+  <label for="timeInput">Enter the time in hours:</label>
+  <input type="number" step="0.01" id="timeInput">
+  <button onclick="calculateWaterConsumption()">Calculate</button>
+  
+  <p id="result"></p>
+</body>
+</html>
