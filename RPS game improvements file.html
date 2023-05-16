@@ -14,54 +14,70 @@
         const SCISSORS = 3;
 
         // Play
-        let player = parseInt(prompt("Choose: 1 for Rock, 2 for Paper, 3 for Scissors"));
-        let computer = getRandomNumber(ROCK, SCISSORS);
+        let playerWins = 0;
+        let computerWins = 0;
 
-        // Responses from player
-        let playerChoice;
-        switch (player) {
-            case ROCK:
-                playerChoice = "Rock";
-                break;
-            case PAPER:
-                playerChoice = "Paper";
-                break;
-            case SCISSORS:
-                playerChoice = "Scissors";
-                break;
-            default:
-                playerChoice = "Invalid choice";
-                break;
+        for (let i = 0; i < 3; i++) {
+            let player = parseInt(prompt("Choose: 1 for Rock, 2 for Paper, 3 for Scissors"));
+            let computer = getRandomNumber(ROCK, SCISSORS);
+
+            // Responses from player
+            let playerChoice;
+            switch (player) {
+                case ROCK:
+                    playerChoice = "Rock";
+                    break;
+                case PAPER:
+                    playerChoice = "Paper";
+                    break;
+                case SCISSORS:
+                    playerChoice = "Scissors";
+                    break;
+                default:
+                    playerChoice = "Invalid choice";
+                    break;
+            }
+            alert("You chose: " + playerChoice);
+
+            // Responses from computer
+            let computerChoice;
+            switch (computer) {
+                case ROCK:
+                    computerChoice = "Rock";
+                    break;
+                case PAPER:
+                    computerChoice = "Paper";
+                    break;
+                case SCISSORS:
+                    computerChoice = "Scissors";
+                    break;
+                default:
+                    computerChoice = "Invalid choice";
+                    break;
+            }
+            alert("Computer chose: " + computerChoice);
+
+            // Rules
+            if (player === computer) {
+                alert("It's a tie!");
+            } else if ((player === ROCK && computer === SCISSORS) ||
+                (player === PAPER && computer === ROCK) ||
+                (player === SCISSORS && computer === PAPER)) {
+                alert("You win!");
+                playerWins++;
+            } else {
+                alert("You lose!");
+                computerWins++;
+            }
         }
-        alert("You chose: " + playerChoice);
 
-        // Responses from computer
-        let computerChoice;
-        switch (computer) {
-            case ROCK:
-                computerChoice = "Rock";
-                break;
-            case PAPER:
-                computerChoice = "Paper";
-                break;
-            case SCISSORS:
-                computerChoice = "Scissors";
-                break;
-            default:
-                computerChoice = "Invalid choice";
-                break;
-        }
-        alert("Computer chose: " + computerChoice);
-
-        // Rules
-        if (player === computer) {
-            alert("It's a tie!");
-        } else if ((player === ROCK && computer === SCISSORS) ||
-            (player === PAPER && computer === ROCK) ||
-            (player === SCISSORS && computer === PAPER)) {
-            alert("You win!");
+        // Determine the winner
+        if (playerWins > computerWins) {
+            alert("Congratulations! You are the best of three winners!");
+        } else if (computerWins > playerWins) {
+            alert("Sorry, the computer is the best of three winners.");
         } else {
-            alert("You lose!");
+            alert("It's a tie! No clear winner in the best of three games.");
         }
     </script>
 </head>
