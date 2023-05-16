@@ -1,0 +1,93 @@
+<html>
+<meta charset="utf-8">
+    <head>
+            <title>Rock, Paper, Scissors Game</title>
+            <script>
+                //General Notes:
+                    // you must write your code in sequential order, this is how it will be executed
+
+                // Functions:
+                    // A function contains some code that will be executed by an event or a call to that function. 
+                    // A function is a set of statements. You can reuse functions within the same script, or in other documents. 
+                    // You define functions at the beginning of a file (in the head section), and call them later in the document.
+
+                // math.random():
+                    // gives you random numbers between 0 and 1, math.floor() removes decimals
+                    
+                    function getRandomNumber(minNumber, maxNumber) { 
+                    let something= 0
+                    return Math.floor( Math.random() * (maxNumber - minNumber + 1) + minNumber)
+                }
+
+                // Options
+                let rock = 1
+                let paper = 2
+                let scissors = 3
+
+                 // Play
+                let player = prompt("Chose: 1 for Rock, 2 for Paper, 3 for Scissors")
+                let MIN = 1
+                let MAX = 3
+                let computer = getRandomNumber(MIN, MAX)
+                
+                    // responses from player
+                    // else added before if tells your code to only keep scanning the code for other options if the condition above is not met
+                    // === gives you the absolute correct value of a calculation, where == might give a false positive
+
+                if(player == 1){
+                    alert("You chose Rock")
+                }
+                else if(player == 2){
+                    alert("You chose Paper")
+                }
+                else if(player == 3){
+                    alert("You chose Scissors")
+                }
+                    // Adding this if function to cover entries above or below 1 is considered coding to cover a "corner case"
+                else {
+                    alert("You chose incorrectly")
+                }
+
+                    // responses from computer
+                if(computer == 1){
+                    alert("Computer chose Rock")
+                }
+                else if(computer == 2){
+                    alert("Computer chose Paper")
+                }
+                else if(computer == 3){
+                    alert("Computer chose Scissors")
+                }
+                    // Adding this if function to cover entries above or below 1 is considered coding to cover a "corner case"
+                else {
+                    alert("Computer chose incorrectly")
+                }
+
+                 // Rules
+                 if (player === computer){
+                    alert("It´s a tie!")
+                 } else if (player == 1 && computer == 2) {
+                    alert ("You win!")
+                 } else if (player == 1 && computer == 3) {
+                    alert ("You win!")
+                }  else if (player == 3 && computer == 2) {
+                    alert ("You win!")
+                }  else {
+                    alert ("You lose!")
+                }
+
+               
+            </script>
+    </head>
+
+    <body>
+        <h1>Great game!</h1>
+        <p> <strong></strong>
+         </p>
+    </body>
+
+
+
+
+</meta charset="utf-8">
+</html>
