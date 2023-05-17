@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Rock, Paper, Scissors Game</title>
+
+    <script>
+        // General Notes:
+            // you must write your code in sequential order, this is how it will be executed
+            // prompt triggers a pop up window in the webpage
+            // userChoice = userChoice.toLowerCase() takes any imput and converts it to lower case
+            // getRandomNumber(min,max) -- This function takes the min (lowest parameter of the range) and max (highest parameter of the range) arguments.
+            // you must define the numbers for rock, paper, scisccors so in the deterine winner section are defined variables
+            // float convert to a decimal number or fractional form. 
+            // math.random():gives you random numbers between 0 and 1,
+            // math.floor rounds the number to an integer 
+            // randomNumber = Math.floor (Math.random() * 3) takes a number between 0 and 1, multiplies it by 3 and then rounds it to an integer
+            // switch takes the value between the brakcets () and then it compares it against your cases, then it returns what you´ve written for each cases
+            // The logical OR operator ( || ) returns the boolean value true if either or both operands is true and returns false otherwise.
+            // The logical AND operator ( && ) returns true if both operands are true and returns false otherwise.
+            // === means strict equality comparison, == not so strict?
+
+        // Functions
+            function getRandomNumber(min, max) {
+                return Math.floor(Math.random() * 3);
+                }
+
+
+        // Play
+        let userChoice = prompt("Choose Rock, Paper or Scissors") ;
+        let computerChoice = getRandomNumber(0, 2);
+        let rock = 0
+        let paper = 1
+        let scissors = 2
+
+        // Responses from player
+        userChoice = userChoice.toLowerCase();
+            if(userChoice === "rock" || userChoice === "scissors" || userChoice === "paper") { alert ("You chose " + userChoice) ;
+                } else { alert ("Error, please type: rock, paper or scissors") ;
+                }
+
+
+        // Responses from compter
+        if(computerChoice == 0){alert("Computer chose Rock");}
+        else if(computerChoice == 1){alert("Computer chose Paper");}
+        else if(computerChoice == 2){alert("Computer chose Scissors");}
+
+       // Determine Winner
+        if (userChoice === computerChoice) { alert("It's a tie!");
+            } else if (
+                (userChoice === "rock" && computerChoice === 2) ||
+                (userChoice === "paper" && computerChoice === 0) ||
+                (userChoice === "scissors" && computerChoice === 1) 
+            ) { alert("You win!");
+            } else { alert("You lose!");
+            }
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+    <p>Chose your weapon!</p>
+</body>
+
+</html> 
+
+
+
