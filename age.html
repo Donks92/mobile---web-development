@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
-<!--Write a function that asks the user for his age and displays all the years he has
-reached (from 1 to his age-->
-
-<!--Prompt them to enter their age, then once you have it tell the machine to list all numbers between 1 and that number-->
-
 <head>
+
+  <!--General Notes:
+    // Write a function that asks the user for his age and displays all the years he has
+    reached from 1 to his age
+    // Prompt them to enter their age, then once you have it tell the machine to list all numbers between 1 and that number
+    //The <var> element in HTML defines a text as a variable and can be used to define variables of a mathematical expression or variables of a piece of code. Note: The <var> element supports all global attributes and event attributes.
+    // The parseInt function converts its first argument to a string, parses that string, then returns an integer or NaN . If not NaN ,the return value will be the integer that is the first argument taken as a number in the specified radix.
+    // this is a for loop for (var i = 1; i <= age; i++) it tells you to start at 1 and then that i should equal age, setting boundaries and to add a list of numbers between, increasing by an interval of 1
+    // The numbersList variable refers to unordered list (<ul>). The innerHTML property allows you to access or modify its HTML content as a string, by using "" you are saying, clear the list or leave it blank
+    //  var listItem = document.createElement("li"); this is a function to create an unordered list
+    // The document.createElement("li") function creates a new <li> element in memory, it take the age inputted, then reffers to the loop to update the lsit accordingly
+    // Text context is what will be displayed in the list
+    //  numbersList.appendChild(listItem) is the used to call the listItem document to be displayed on the page
+    // you add all of the code that drives the functionality to the head, the the content to the body
+    -->
+
+  <meta charset="utf-8">
+
   <title>Years Lived</title>
+
   <script>
+    // Overall function to instruct code how to generate the numbers from 1 to age entered and instructions how to input it in the body
     function generateNumbers() {
       var age = parseInt(document.getElementById("ageInput").value);
       var numbersList = document.getElementById("numbersList");
@@ -25,10 +40,13 @@ reached (from 1 to his age-->
   </script>
 </head>
 <body>
+  <!--this is the code to display the button on the page as a label-->
   <label for="ageInput">Enter your age:</label>
   <input type="number" id="ageInput">
   <button onclick="generateNumbers()">Generate List</button>
   
+    <!--this is the container for the list of numbers for the age from 1-30-->
   <ul id="numbersList"></ul>
 </body>
+
 </html>
