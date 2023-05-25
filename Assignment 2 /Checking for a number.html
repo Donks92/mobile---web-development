@@ -1,0 +1,29 @@
+<html>
+<head>
+
+    <script>
+    //Step 1: set array
+    let array = [85, 75, 60, 90, 100, 100];
+
+    //Step 2: scan the list and check for a variable
+    let isNumberIncluded = array.includes(85);
+
+    //Step 3: Update HTML to display sum
+    //the above will not show up on your webpage because you have not used HTML to display it
+    function myFunction() {
+        document.getElementById("number").textContent = isNumberIncluded;
+    }
+        </script>
+
+</head>
+
+<body onload="myFunction()">
+    <!--this makes the sum appear on your page-->
+    <h1>The number is in the list? <span id="number"></span></h1>
+    
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,37 @@
+
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <script>
+        // Step 1: Set array 
+        // An array in JavaScript is a collection of data that is designed to store multiple values in a single variable  
+        // set inital sum to 0 so this is where it starts
+        let array =  [1, 2, 3, 4, 5, -1, -2, -3, -4, -5];
+        let sum = 0;
+    
+        // Step 2: Sum numbers, only positive 
+        //below you have said if the number in the array is greater than 0 to sum it
+        //this is a loop and i++ adds the next number in the array to each sum
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] > 0) {
+            sum += array[i];
+        }
+    }
+    
+    //Step 3: Update HTML to display sum
+    //the above will not show up on your webpage because you have not used HTML to display it
+    function myFunction() {
+        document.getElementById("sum").textContent = sum;
+    }
+        </script>
+
+</head>
+
+<body onload="myFunction()">
+    <!--this makes the sum appear on your page-->
+    <h1>The sum is <span id="sum"></span></h1>
+    
+
+</body>
+</html>

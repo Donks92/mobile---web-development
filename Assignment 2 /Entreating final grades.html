@@ -1,0 +1,43 @@
+<html>
+<head>
+
+    <script>
+    //Step 1: set array
+    let array = [85, 75, 60, 90, 100, 100];
+
+    //Step 2: calcuate total number of valurable = array.lenght function
+    
+    function calculateAverage(array) {
+    var total = 0;
+    var count = array.length;
+
+    //Step 3: calculate sum of all valuables
+    array.forEach(function(item, index) {
+        total += item;
+    });
+
+    //Step 4: Divide sum by number of variables
+    return total / count;
+}
+
+    //Step 4: Update HTML to display sum
+    //the above will not show up on your webpage because you have not used HTML to display it
+    //toFixed states to what decimal point you want it to round
+    function myFunction() {
+        var average = calculateAverage(array);
+        document.getElementById("average").textContent = average.toFixed(0);
+    }
+        </script>
+
+</head>
+
+<body onload="myFunction()">
+    <!--this makes the sum appear on your page-->
+    <h1>The average is <span id="average"></span></h1>
+    
+
+</body>
+
+
+
+</html>
